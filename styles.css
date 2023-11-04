@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css?family=Inter");
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 70%;
+}
+
+body{
+  font-family: Inter, Courier, monospace;
+  line-height: 1.3;
+  color: rgb(231, 230, 230);
+}
+
+#navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #98092b;
+  z-index: 2;
+}
+
+#navbar ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#navbar li{
+  list-style: none;
+}
+
+#navbar a{
+  display: block;
+  color: white;
+  padding: 1.8rem 4rem;
+  text-decoration: none;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#navbar a:hover{
+  background-color: #a32f42;
+  transition: .5s;
+}
+
+h1{
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 60px;
+}
+
+/*About--------------------------------------------*/
+
+#inicio{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #243642a6, #1f2f3af1, #0e161bf1);
+  animation: change 10s ease-in-out infinite;
+  background-size: 400% 400%;
+}
+
+#inicio::before{
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: url("https://static.vecteezy.com/system/resources/previews/020/544/802/non_2x/blue-abstract-background-with-flowing-particles-dark-blue-digital-glowing-futuristic-technology-concept-background-vector.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+@keyframes change {
+  0%{
+    background-position: 0% 50%;
+    text-shadow: 1px 0 6px #577191, -1px 0 6px #577191, 0 1px 6px #577191, 0 -1px 6px #577191;
+  }
+  50%{
+    background-position: 100% 50%;
+
+  }
+  100%{
+    background-position: 0% 50%;
+    text-shadow: 1px 0 6px #577191, -1px 0 6px #577191, 0 1px 6px #577191, 0 -1px 6px #577191;
+  }
+}
+
+#inicio p{
+  color: #e0daa3;
+  font-size: 2.4rem;
+  text-align: center;
+  font-style: italic;
+  font-weight: 200;
+}
+
+/*Projects--------------------------------------------*/
+
+
+#usos{
+  background: #333333;
+  padding: 8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#usos h2{
+  font-size: 3.4rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  padding-bottom: 20px;
+  border-bottom: 0.1rem solid white;
+}
+
+#container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.project-tile{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #E94560;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color:inherit;
+  transition: .5s;
+}
+
+.project-tile:hover{
+  background-color: #98092b;
+  transition: .5s;
+  scale: 1.1;
+}
+
+.project-img{
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 6px solid white;
+}
+
+#usos p{
+  font-size: 860%;
+  margin-top: 0.8rem;
+  padding: 1rem 0;
+  transition: .5s;
+  position: relative;
+  text-align: center;
+}
+
+#usos p::before, #usos p::after{
+  content: "";
+  position: absolute;
+  width: calc(120px - 30%);
+  min-width: 40px;
+  height: 3px;
+  background-color: currentColor;
+  top: 1.1em;
+  transition: .5s ease-in-out;
+}
+
+#usos p::before{
+  left: calc(101% + 11px);
+}
+
+#usos p::after{
+  right: calc(100% + 11px);
+}
+
+.project-tile:hover p{
+  scale: 1.2;
+  transition: .5s;
+}
+
+.project-tile:hover p::before, .project-tile:hover p::after{
+  scale: 0;
+  transition: .5s;
+}
+
+@media(max-width: 1250px){
+  #projects p{
+    font-size: 560%;
+  }
+
+  #projects p::before, #projects p::after{
+    width: 20px;
+    top: 1.3em;
+    height: 4%;
+    min-width: 0;
+  }
+}
+
+@media(max-width: 840px){
+  #projects p::before, #projects p::after{
+    top: 1.3em;
+    height: 4%;
+    min-width: 40px;
+  }
+}
+
+@media(max-width: 650px){
+  #projects p::before, #projects p::after{
+    width: 20px;
+    top: 1.3em;
+    height: 4%;
+    min-width: 0px;
+  }
+}
+
+
+/*Contact--------------------------------------------*/
+
+#caracteristicas{
+  min-height: 100vh;
+  background-color: #3e5e5c;
+  padding: 8rem 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+#detalle{
+  text-align: left;
+  width: 50%;
+}
+
+#detalle h2 {
+  font-size: 3.3rem;
+  margin-bottom: 10px;
+}
+
+#detalle p {
+  font-size: 2.3rem;
+}
+
+#caracteristicas img{
+  width: 40%;
+  margin-right: 5px;
+  border-radius: 5px;
+  border: 3px solid white
+}
+
+/*Footer--------------------------------------------*/
+
+footer{
+  background-color: #98092b;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer p{
+  font-size: 1.8rem;
+  margin: 1.8rem;
+}
+
+footer a{
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+footer a:hover{
+  text-decoration: underline;
+}
